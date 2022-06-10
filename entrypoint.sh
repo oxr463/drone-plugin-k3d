@@ -5,7 +5,7 @@ set -eu
 k3d cluster create "${PLUGIN_CLUSTER_NAME}"
 
 # Set cluster context for kubectl
-k3d kubeconfig merge "${CLUSTER_NAME}" --kubeconfig-switch-context
+k3d kubeconfig merge "${PLUGIN_CLUSTER_NAME}" --kubeconfig-switch-context
 
 # Run settings.command from .drone.yml file
 /bin/sh -c "${PLUGIN_COMMAND}"
