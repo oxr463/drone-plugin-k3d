@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM docker:20.10.17-dind-alpine3.16
 
 COPY entrypoint.sh /usr/local/bin/drone-plugin-k3d
 
