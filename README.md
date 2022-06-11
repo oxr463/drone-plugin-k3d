@@ -17,6 +17,21 @@ steps:
   image: ghcr.io/oxr463/drone-plugin-k3d
   settings:
     command: kubectl get nodes
+  volumes:
+  - name: docker
+    path: /var/run
+
+services:
+- name: docker
+  image: docker:dind
+  privileged: true
+  volumes:
+  - name: docker
+    path: /var/run
+
+volumes:
+- name: docker
+  temp: {}
 ```
 
 ## Reference
